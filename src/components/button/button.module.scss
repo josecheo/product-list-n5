@@ -1,0 +1,31 @@
+.button,
+.active,
+.disabled {
+  background-color: rgb(185, 251, 250);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.04);
+  }
+  h5 {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    margin: 0;
+    text-align: center;
+  }
+}
+.disabled {
+  background-color: rgb(228, 228, 228);
+  color: #dadada; 
+  &:hover {
+    cursor: not-allowed;
+    transform: scale(1);
+  }
+}
+.active {
+  color: #646966;
+}

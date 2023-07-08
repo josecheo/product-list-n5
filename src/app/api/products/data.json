@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "name": "Leche",
+      "price": 75000,
+      "amount": 1,
+      "id": 1,
+      "image": "https://www.nicepng.com/png/detail/700-7006692_leche-png.png"
+    },
+    {
+      "name": "Cereal",
+      "price": 85300,
+      "amount": 3,
+      "id": 2,
+      "image": "https://www.nestle-cereals.com/ec/sites/g/files/qirczx961/files/2023-02/CEREAL%20TRIX.png"
+    },
+    {
+      "name": "Huevos",
+      "price": 75000,
+      "amount": 12,
+      "id": 3,
+      "image": "https://w7.pngwing.com/pngs/697/534/png-transparent-chicken-egg-eating-egg-white-food-eggs-hd-free-buckle-material-free-logo-design-template-chicken-eggshell.png"
+    },
+    {
+      "name": "Carne",
+      "price": 85300,
+      "amount": 21,
+      "id": 4,
+      "image": "https://www.pngmart.com/files/1/Beef-Meat-PNG-File.png"
+    },
+    {
+      "name": "Queso",
+      "price": 75000,
+      "amount": 8,
+      "id": 5,
+      "image": "https://www.pngplay.com/wp-content/uploads/4/Cheese-PNG-Pic-Background.png"
+    },
+    {
+      "name": "Arroz",
+      "price": 85300,
+      "amount": 9,
+      "id": 6,
+      "image": "https://cofepasa.com/wp-content/uploads/2021/04/arroz-portal.jpg"
+    },
+    {
+      "name": "Frijoles",
+      "price": 85300,
+      "amount": 32,
+      "id": 7,
+      "image": "https://media.admagazine.com/photos/63c83c743af9f9d14d8d7809/4:3/w_1995,h_1496,c_limit/frijoles-como-fertilizante.jpg"
+    },
+    {
+      "name": "Lentejas",
+      "price": 175000,
+      "amount": 42,
+      "id": 8,
+      "image": "https://content21.sabervivirtv.com/medio/2022/05/11/lentejas_23e9980f_1280x720.jpg"
+    },
+    {
+      "name": "Avena",
+      "price": 85300,
+      "amount": 56,
+      "id": 9,
+      "image": "https://deliciaskitchen.com/wp-content/uploads/2021/06/avena.jpg"
+    },
+    {
+      "name": "Pollo",
+      "price": 375000,
+      "amount": 23,
+      "id": 10,
+      "image": "https://i.blogs.es/8ceb02/pollo_entero/840_560.jpg"
+    }
+  ]
+}

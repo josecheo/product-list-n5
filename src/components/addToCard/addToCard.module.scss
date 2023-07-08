@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 122px;
+  /* margin-top: 15px; */
+}
+.wrapper p {
+  color: #646966;
+  font-size: 16px;
+  font-family: Nunito;
+  font-weight: 700;
+}
+
+.button,
+.disable,
+.active {
+  border-radius: 5px;
+  background: #fff;
+  font-size: 24px;
+  width: 50px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+  cursor: pointer;
+}
+.disable {
+  border: 1px solid #dadada;
+  color: #dadada;
+}
+.active {
+  border: 1px solid #646966;
+  color: #646966;
+}
