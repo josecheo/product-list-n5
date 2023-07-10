@@ -7,6 +7,7 @@ import { useContext, useEffect, useState } from "react";
 import { CartContext } from "@/app/context/cardContext";
 import Button from "@/components/button";
 import { ProductContext } from "@/app/context/productsContext";
+import { useRouter } from "next/navigation";
 
 type SerializedState = {
   id: number;
@@ -21,7 +22,7 @@ export default function TableCart() {
     useContext(CartContext);
   const { products, buyProduct } = useContext(ProductContext);
   const [successfulPurchase, setSuccessfulPurchase] = useState(false);
-
+  const router = useRouter();
   useEffect(() => {
     if (successfulPurchase) {
       cleanCart();
@@ -143,6 +144,13 @@ export default function TableCart() {
       </table>
       <br />
       <Button title="Comprar ahora!" handleClick={handleClick} />
+      <br />
+      <Button title="Limpiar!" handleClick={() => cleanCart()} outlined />
+      <br />
+      <Button
+        title="volver a comprar!"
+        handleClick={() => router.push("/products")}
+      />
     </div>
   );
 }
