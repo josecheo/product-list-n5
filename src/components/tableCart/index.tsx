@@ -6,11 +6,7 @@ import basura from "../../../public/assets/basura.png";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "@/app/context/cardContext";
 import Button from "@/components/button";
-// import { useRouter } from "next/navigation";
-// import { useRouter } from 'next/router'
-type Props = {
-  product: Product[];
-};
+import { ProductContext } from "@/app/context/productsContext";
 
 type SerializedState = {
   id: number;
@@ -20,24 +16,23 @@ type SerializedState = {
   totalPayment: number;
 };
 
-export default function TableCart({ product }: Props) {
+export default function TableCart() {
   const { cartItems, removeFromCart, subtractAmount, cleanCart } =
     useContext(CartContext);
+  const { products, buyProduct } = useContext(ProductContext);
   const [successfulPurchase, setSuccessfulPurchase] = useState(false);
-  // const router = useRouter();
 
   useEffect(() => {
     if (successfulPurchase) {
       cleanCart();
       setTimeout(() => {
-        window.location.href = '/products'
-        // router.replace("/products");
+        window.location.href = "/products";
       }, 2000);
     }
   }, [successfulPurchase]);
 
   const serializedState: SerializedState[] = cartItems.map((item) => {
-    const productDB = product.find((item) => item.id === item.id) || {
+    const productDB = products.find((item: Product) => item.id === item.id) || {
       name: "",
       price: 0,
       amount: 0,
@@ -68,21 +63,8 @@ export default function TableCart({ product }: Props) {
   };
 
   const handleClick = async () => {
-    var body = JSON.stringify(cartItems);
-
-    console.log("process.env.URL_HOST",process.env.URL_HOST)
-    const res = await fetch(`/api/products`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body,
-    });
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    } else {
-      setSuccessfulPurchase(true);
-    }
+    buyProduct(cartItems);
+    setSuccessfulPurchase(true);
   };
 
   return successfulPurchase ? (

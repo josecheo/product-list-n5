@@ -1,11 +1,13 @@
+"use client";
 import styles from "./products.module.scss";
 import ProductCard from "../../components/productCard";
 import { Product } from "@/types/products";
 import CartIcon from "../../components/cartIcon";
+import { useContext } from "react";
+import { ProductContext } from "../context/productsContext";
 
-export default async function ProductsList() {
-  const { data } = await getData();
-  const { products } = data;
+export default function ProductsList() {
+  const { products } = useContext(ProductContext);
 
   return (
     <div className={styles.wrapper}>
@@ -19,15 +21,4 @@ export default async function ProductsList() {
       <CartIcon />
     </div>
   );
-}
-
-async function getData() {
-  try {
-    const res = await fetch(`${process.env.URL_HOST}/api/products`, {
-      cache: "no-cache",
-    });
-    return res.json();
-  } catch (error) {
-    return { data: { products: [] } };
-  }
 }
