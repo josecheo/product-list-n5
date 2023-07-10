@@ -26,7 +26,7 @@ export async function POST(request) {
         (product) => product.id === productId
       );
       jsonData.products[productIndex].amount -= quantity;
-      fs.writeFileSync(dataFilePath, JSON.stringify(jsonData, null, 2));
+      // fs.writeFileSync(dataFilePath, JSON.stringify(jsonData, null, 2));
     });
 
     return NextResponse.json({ message: `el producto ` }, { status: 200 });
