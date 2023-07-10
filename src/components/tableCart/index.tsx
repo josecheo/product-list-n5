@@ -70,7 +70,8 @@ export default function TableCart({ product }: Props) {
   const handleClick = async () => {
     var body = JSON.stringify(cartItems);
 
-    const res = await fetch(`${window.location.origin}/api/products`, {
+    console.log("process.env.URL_HOST",process.env.URL_HOST)
+    const res = await fetch(`/api/products`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
