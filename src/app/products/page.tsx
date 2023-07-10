@@ -1,9 +1,9 @@
 "use client";
 import styles from "./products.module.scss";
-import ProductCard from "../../components/productCard";
+import ProductCard from "@/components/productCard";
 import { Product } from "@/types/products";
 import { useContext } from "react";
-import { ProductContext } from "../context/productsContext";
+import { ProductContext } from "@/app/context/productsContext";
 
 export default function ProductsList() {
   const { products } = useContext(ProductContext);
@@ -16,7 +16,6 @@ export default function ProductsList() {
             <ProductCard key={product.id} product={product} />
           ))}
       </div>
-   
     </div>
   );
 }

@@ -9,10 +9,7 @@ type AddToCardProps = {
   stock: number;
 };
 
-export default function AddToCard({
-  stock,
-  productId,
-}: AddToCardProps) {
+export default function AddToCard({ stock, productId }: AddToCardProps) {
   const [count, setCount] = useState(1);
   const { addToCart, cartItems } = useContext(CartContext);
 
@@ -22,19 +19,22 @@ export default function AddToCard({
 
   const isMaximun = existingItem ? existingItem.quantity >= stock : false;
 
-  const handleClick = () => {
+  const handleClick = (event: { stopPropagation: () => void }) => {
+    event.stopPropagation();
     addToCart({ productId, quantity: count });
     setCount(1);
   };
 
-  const handleSubtract = () => {
+  const handleSubtract = (event: { stopPropagation: () => void }) => {
+    event.stopPropagation();
     if (isMaximun) return;
     if (count > 1) {
       setCount((prev) => prev - 1);
     }
   };
 
-  const handleAdd = () => {
+  const handleAdd = (event: { stopPropagation: () => void }) => {
+    event.stopPropagation();
     if (isMaximun) return;
     if (count < stock - (existingItem ? existingItem.quantity : 0)) {
       setCount((prev) => prev + 1);
@@ -75,7 +75,7 @@ export default function AddToCard({
       <Buttton
         disabled={isMaximun}
         title={existingItem ? "Agregar más" : "Agregar a carro"}
-        handleClick={handleClick}
+        handleClick={(event) => handleClick(event)}
       />
     </div>
   );

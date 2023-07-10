@@ -3,7 +3,7 @@ import styles from "./button.module.scss";
 
 type ButtonProps = {
   title: string;
-  handleClick: () => void;
+  handleClick: (event: any) => void;
   disabled?: boolean;
   outlined?: boolean;
 };
@@ -25,7 +25,7 @@ export default function Button({
   return (
     <div
       className={getStyleMode()}
-      onClick={disabled ? async () => {} : async () => handleClick()}
+      onClick={disabled ? async () => {} : async (event) => handleClick(event)}
     >
       <h5>{title}</h5>
     </div>

@@ -1,35 +1,51 @@
 @import "../../app/utils/layout.scss";
 
-.tabla {
-  margin-top: 20px;
-  width: 100%;
-  border-collapse: collapse;
-  .trash {
-    transition: all 0.1s ease-in-out;
-    &:hover {
-      cursor: pointer;
-      transform: scale(1.1);
+.wrapper {
+  overflow: hidden;
+  padding: 1rem;
+  .container {
+    width: 100%;
+    overflow: auto;
+    .container_table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      .trash {
+        transition: all 0.1s ease-in-out;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+        }
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        // border: 1px solid #ccc;
+      }
+
+      thead {
+        background-color: rgb(185, 251, 250);
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: rgba(185, 251, 250, 0.2);
+      }
     }
   }
-  th,
-  td {
-    padding: 10px;
-    text-align: left;
-    // border: 1px solid #ccc;
-  }
-
-  thead {
-    background-color: rgb(185, 251, 250);
-  }
-
-  tbody tr:nth-child(even) {
-    background-color: rgba(185, 251, 250, 0.2);
-  }
 }
+
 .total {
   display: flex;
   width: 100%;
   justify-content: flex-end;
+}
+
+.containerQuantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 90px;
 }
 
 .button,
@@ -52,10 +68,4 @@
 .active {
   border: 1px solid #646966;
   color: #646966;
-}
-.containerQuantity {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 90px;
 }

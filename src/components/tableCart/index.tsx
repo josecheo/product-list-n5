@@ -71,8 +71,9 @@ export default function TableCart() {
   return successfulPurchase ? (
     <h1>Compra exitosa!</h1>
   ) : (
-    <div>
-      <table className={styles.tabla}>
+    <div className={styles.wrapper}>
+      <div className={styles.container} >
+      <table className={styles.container_table}>
         <thead>
           <tr>
             <th>Producto</th>
@@ -142,6 +143,7 @@ export default function TableCart() {
           </tr>
         </tbody>
       </table>
+      </div>
       <br />
       <Button title="Comprar ahora!" handleClick={handleClick} />
       <br />

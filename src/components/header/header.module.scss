@@ -1,14 +1,15 @@
 .header {
   max-width: 900px;
-
   width: 100%;
   margin: auto;
   height: 60px;
   background-color: #fff;
 
+
   .header_fixed {
     max-width: 900px;
     width: 100%;
+    padding: 20px;
     position: fixed;
     background-color: #fff;
     display: flex;
