@@ -7,13 +7,11 @@ import { CartContext } from "@/app/context/cardContext";
 type AddToCardProps = {
   productId: number;
   stock: number;
-  showButtonAdd: boolean;
 };
 
 export default function AddToCard({
   stock,
   productId,
-  showButtonAdd,
 }: AddToCardProps) {
   const [count, setCount] = useState(1);
   const { addToCart, cartItems } = useContext(CartContext);

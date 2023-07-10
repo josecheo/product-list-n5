@@ -35,6 +35,7 @@ export default function ProductCard({ product }: Props) {
         <AddToCard
           productId={product.id}
           stock={product.amount}
+        
         />
       </div>
     </div>

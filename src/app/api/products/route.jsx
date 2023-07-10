@@ -10,10 +10,11 @@ const dataFilePath = path.join(
   "products",
   "data.json"
 );
+
 const jsonData = JSON.parse(fs.readFileSync(dataFilePath, "utf8"));
 
 export async function GET() {
-  return NextResponse.json(jsonData);
+  return NextResponse.json(jsonData, { revalidated: true });
 }
 
 export async function POST(request) {
@@ -25,7 +26,6 @@ export async function POST(request) {
         (product) => product.id === productId
       );
       jsonData.products[productIndex].amount -= quantity;
-      console.log("jsonData", jsonData.products[productIndex].amount);
       fs.writeFileSync(dataFilePath, JSON.stringify(jsonData, null, 2));
     });
 

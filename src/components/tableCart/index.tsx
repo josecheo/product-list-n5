@@ -6,8 +6,8 @@ import basura from "../../../public/assets/basura.png";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "@/app/context/cardContext";
 import Button from "@/components/button";
-import { useRouter } from "next/navigation";
-
+// import { useRouter } from "next/navigation";
+// import { useRouter } from 'next/router'
 type Props = {
   product: Product[];
 };
@@ -24,13 +24,14 @@ export default function TableCart({ product }: Props) {
   const { cartItems, removeFromCart, subtractAmount, cleanCart } =
     useContext(CartContext);
   const [successfulPurchase, setSuccessfulPurchase] = useState(false);
-  const router = useRouter();
+  // const router = useRouter();
 
   useEffect(() => {
     if (successfulPurchase) {
       cleanCart();
       setTimeout(() => {
-        router.replace("/products");
+        window.location.href = '/products'
+        // router.replace("/products");
       }, 2000);
     }
   }, [successfulPurchase]);

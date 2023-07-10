@@ -3,14 +3,14 @@
     {
       "name": "Leche",
       "price": 75000,
-      "amount": 10,
+      "amount": 2,
       "id": 1,
       "image": "https://www.nicepng.com/png/detail/700-7006692_leche-png.png"
     },
     {
       "name": "Cereal",
       "price": 85300,
-      "amount": 6,
+      "amount": 2,
       "id": 2,
       "image": "https://www.nestle-cereals.com/ec/sites/g/files/qirczx961/files/2023-02/CEREAL%20TRIX.png"
     },
@@ -24,7 +24,7 @@
     {
       "name": "Carne",
       "price": 85300,
-      "amount": 16,
+      "amount": 1,
       "id": 4,
       "image": "https://www.pngmart.com/files/1/Beef-Meat-PNG-File.png"
     },
@@ -52,7 +52,7 @@
     {
       "name": "Lentejas",
       "price": 175000,
-      "amount": 38,
+      "amount": 30,
       "id": 8,
       "image": "https://content21.sabervivirtv.com/medio/2022/05/11/lentejas_23e9980f_1280x720.jpg"
     },
