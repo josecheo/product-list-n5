@@ -3,28 +3,28 @@
     {
       "name": "Leche",
       "price": 75000,
-      "amount": 2,
+      "amount": 50,
       "id": 1,
       "image": "https://www.nicepng.com/png/detail/700-7006692_leche-png.png"
     },
     {
       "name": "Cereal",
       "price": 85300,
-      "amount": 2,
+      "amount": 50,
       "id": 2,
       "image": "https://www.nestle-cereals.com/ec/sites/g/files/qirczx961/files/2023-02/CEREAL%20TRIX.png"
     },
     {
       "name": "Huevos",
       "price": 75000,
-      "amount": 2,
+      "amount": 50,
       "id": 3,
       "image": "https://w7.pngwing.com/pngs/697/534/png-transparent-chicken-egg-eating-egg-white-food-eggs-hd-free-buckle-material-free-logo-design-template-chicken-eggshell.png"
     },
     {
       "name": "Carne",
       "price": 85300,
-      "amount": 1,
+      "amount": 50,
       "id": 4,
       "image": "https://www.pngmart.com/files/1/Beef-Meat-PNG-File.png"
     },
