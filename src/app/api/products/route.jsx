@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
-
+import data from "./data.json";
 const dataFilePath = path.join(
   process.cwd(),
   "src",
@@ -11,7 +11,9 @@ const dataFilePath = path.join(
   "data.json"
 );
 
-const jsonData = JSON.parse(fs.readFileSync(dataFilePath, "utf8"));
+// const jsonData = JSON.parse(fs.readFileSync(dataFilePath, "utf8"));
+
+const jsonData = { ...data };
 
 export async function GET() {
   return NextResponse.json({ data: jsonData, status: 200 });
