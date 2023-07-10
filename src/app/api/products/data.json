@@ -10,7 +10,7 @@
     {
       "name": "Cereal",
       "price": 85300,
-      "amount": 50,
+      "amount": 47,
       "id": 2,
       "image": "https://www.nestle-cereals.com/ec/sites/g/files/qirczx961/files/2023-02/CEREAL%20TRIX.png"
     },
@@ -24,7 +24,7 @@
     {
       "name": "Carne",
       "price": 85300,
-      "amount": 50,
+      "amount": 40,
       "id": 4,
       "image": "https://www.pngmart.com/files/1/Beef-Meat-PNG-File.png"
     },

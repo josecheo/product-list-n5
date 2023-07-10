@@ -3,7 +3,8 @@ import TableCart from "@/components/tableCart";
 import Link from "next/link";
 
 export default async function Cart() {
-  const { products } = await getData();
+  const { data } = await getData();
+  const { products } = data;
 
   return (
     <div className={styles.wrapper}>
@@ -17,11 +18,12 @@ export default async function Cart() {
 }
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/products", {
-    cache: "no-cache",
-  });
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+  try {
+    const res = await fetch("http://localhost:3000/api/products", {
+      cache: "no-cache",
+    });
+    return res.json();
+  } catch (error) {
+    return { data: { products: [] } };
   }
-  return res.json();
 }

@@ -14,7 +14,7 @@ const dataFilePath = path.join(
 const jsonData = JSON.parse(fs.readFileSync(dataFilePath, "utf8"));
 
 export async function GET() {
-  return NextResponse.json(jsonData, { revalidated: true });
+  return NextResponse.json({ data: jsonData, status: 200 });
 }
 
 export async function POST(request) {
