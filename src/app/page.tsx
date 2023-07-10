@@ -13,6 +13,7 @@ export default function Home() {
   const handleClick = () => {
     router.push("/products");
   };
+  
   return (
     <div className={styles.wrapper}>
       <h1>Test Products N5</h1>

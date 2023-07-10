@@ -5,15 +5,15 @@ import Buttton from "@/components/button";
 import { CartContext } from "@/app/context/cardContext";
 
 type AddToCardProps = {
-  amount: number;
   productId: number;
   stock: number;
+  showButtonAdd: boolean;
 };
 
 export default function AddToCard({
-  amount,
-  productId,
   stock,
+  productId,
+  showButtonAdd,
 }: AddToCardProps) {
   const [count, setCount] = useState(1);
   const { addToCart, cartItems } = useContext(CartContext);
@@ -22,10 +22,11 @@ export default function AddToCard({
     (element) => element.productId === productId
   );
 
-  const isMaximun = existingItem ? existingItem.quantity >= amount : false;
+  const isMaximun = existingItem ? existingItem.quantity >= stock : false;
 
   const handleClick = () => {
     addToCart({ productId, quantity: count });
+    setCount(1);
   };
 
   const handleSubtract = () => {
@@ -37,7 +38,7 @@ export default function AddToCard({
 
   const handleAdd = () => {
     if (isMaximun) return;
-    if (count < amount) {
+    if (count < stock - (existingItem ? existingItem.quantity : 0)) {
       setCount((prev) => prev + 1);
     }
   };
@@ -63,7 +64,7 @@ export default function AddToCard({
           className={
             isMaximun
               ? styles.disable
-              : count > 0 && count < amount
+              : count > 0 && count < stock
               ? styles.active
               : styles.disable
           }
@@ -72,6 +73,7 @@ export default function AddToCard({
         </button>
       </div>
       <br />
+
       <Buttton
         disabled={isMaximun}
         title={existingItem ? "Agregar más" : "Agregar a carro"}

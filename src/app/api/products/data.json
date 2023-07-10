@@ -3,28 +3,28 @@
     {
       "name": "Leche",
       "price": 75000,
-      "amount": 1,
+      "amount": 10,
       "id": 1,
       "image": "https://www.nicepng.com/png/detail/700-7006692_leche-png.png"
     },
     {
       "name": "Cereal",
       "price": 85300,
-      "amount": 3,
+      "amount": 6,
       "id": 2,
       "image": "https://www.nestle-cereals.com/ec/sites/g/files/qirczx961/files/2023-02/CEREAL%20TRIX.png"
     },
     {
       "name": "Huevos",
       "price": 75000,
-      "amount": 12,
+      "amount": 2,
       "id": 3,
       "image": "https://w7.pngwing.com/pngs/697/534/png-transparent-chicken-egg-eating-egg-white-food-eggs-hd-free-buckle-material-free-logo-design-template-chicken-eggshell.png"
     },
     {
       "name": "Carne",
       "price": 85300,
-      "amount": 21,
+      "amount": 16,
       "id": 4,
       "image": "https://www.pngmart.com/files/1/Beef-Meat-PNG-File.png"
     },
@@ -45,14 +45,14 @@
     {
       "name": "Frijoles",
       "price": 85300,
-      "amount": 32,
+      "amount": 29,
       "id": 7,
       "image": "https://media.admagazine.com/photos/63c83c743af9f9d14d8d7809/4:3/w_1995,h_1496,c_limit/frijoles-como-fertilizante.jpg"
     },
     {
       "name": "Lentejas",
       "price": 175000,
-      "amount": 42,
+      "amount": 38,
       "id": 8,
       "image": "https://content21.sabervivirtv.com/medio/2022/05/11/lentejas_23e9980f_1280x720.jpg"
     },

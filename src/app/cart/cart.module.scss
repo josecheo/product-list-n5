@@ -1,0 +1,23 @@
+@import "../utils/layout.scss";
+
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+.containerProducts {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+.buttonBack {
+  border-radius: 5px;
+  background: #fff;
+  font-size: 24px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+  cursor: pointer;
+}

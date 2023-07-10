@@ -2,6 +2,7 @@
 import styles from "./cartIcon.module.scss";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "@/app/context/cardContext";
+import Link from "next/link";
 
 type ShoppingCartProps = {
   width: number;
@@ -47,11 +48,11 @@ export default function CartIcon() {
   };
 
   return (
-    <div className={styles.circle}>
+    <Link href={"/cart"} className={styles.circle}>
       <ShoppingCart width={30} height={30} fill={"#000"} />
       <div className={styles.circleBag}>
         <h2>{totalQuantity}</h2>
       </div>
-    </div>
+    </Link>
   );
 }

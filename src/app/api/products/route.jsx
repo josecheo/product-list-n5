@@ -19,20 +19,17 @@ export async function GET() {
 export async function POST(request) {
   try {
     const requestBody = await request.json();
-    const { id, amount } = requestBody;
+    requestBody.forEach((element) => {
+      const { productId, quantity } = element;
+      const productIndex = jsonData.products.findIndex(
+        (product) => product.id === productId
+      );
+      jsonData.products[productIndex].amount -= quantity;
+      console.log("jsonData", jsonData.products[productIndex].amount);
+      fs.writeFileSync(dataFilePath, JSON.stringify(jsonData, null, 2));
+    });
 
-    const productIndex = jsonData.products.findIndex(
-      (product) => product.id === id
-    );
-
-    jsonData.products[productIndex].amount -= amount;
-
-    fs.writeFileSync(dataFilePath, JSON.stringify(jsonData, null, 2));
-
-    return NextResponse.json(
-      { message: `el producto ${id}` },
-      { status: 200 }
-    );  
+    return NextResponse.json({ message: `el producto ` }, { status: 200 });
   } catch (error) {
     return NextResponse.error("Error al actualizar los datos");
   }
