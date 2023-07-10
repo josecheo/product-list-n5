@@ -13,7 +13,7 @@ export default function AddToCard({ stock, productId }: AddToCardProps) {
   const [count, setCount] = useState(1);
   const { addToCart, cartItems } = useContext(CartContext);
 
-  const existingItem = cartItems.find(
+  const existingItem = cartItems?.find(
     (element) => element.productId === productId
   );
 
