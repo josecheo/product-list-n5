@@ -70,7 +70,7 @@ export default function TableCart({ product }: Props) {
   const handleClick = async () => {
     var body = JSON.stringify(cartItems);
 
-    const res = await fetch("http://localhost:3000/api/products", {
+    const res = await fetch(`${window.location.origin}/api/products`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

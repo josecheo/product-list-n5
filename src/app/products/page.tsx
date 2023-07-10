@@ -23,7 +23,7 @@ export default async function ProductsList() {
 
 async function getData() {
   try {
-    const res = await fetch("http://localhost:3000/api/products", {
+    const res = await fetch(`${window.location.origin}/api/products`, {
       cache: "no-cache",
     });
     return res.json();
