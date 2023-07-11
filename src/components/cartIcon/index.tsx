@@ -3,7 +3,7 @@ import styles from "./cartIcon.module.scss";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "@/app/context/cardContext";
 import Link from "next/link";
-
+import { StyleThemeContext } from "@/app/context/styleTheme";
 type ShoppingCartProps = {
   width: number;
   height: number;
@@ -36,6 +36,7 @@ const ShoppingCart = ({ width, height, fill }: ShoppingCartProps) => (
 export default function CartIcon() {
   const { cartItems } = useContext(CartContext);
   const [totalQuantity, setTotalQuantity] = useState(0);
+  const { theme } = useContext(StyleThemeContext);
 
   useEffect(() => {
     if (cartItems) {
@@ -49,8 +50,12 @@ export default function CartIcon() {
 
   return (
     <Link href={"/cart"} className={styles.circle}>
-      <ShoppingCart width={30} height={30} fill={"#000"} />
-      <div className={styles.circleBag}>
+      <ShoppingCart
+        width={30}
+        height={30}
+        fill={theme === "light" ? "#000" : "#FFF"}
+      />
+      <div className={`${styles.circleBag} ${styles[theme]}`}>
         <h2>{totalQuantity}</h2>
       </div>
     </Link>

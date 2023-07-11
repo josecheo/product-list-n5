@@ -2,16 +2,19 @@ import styles from "./productCard.module.scss";
 import { Product } from "@/types/products";
 import Image from "next/image";
 import AddToCard from "../addToCard";
+import { useContext } from "react";
 import { useRouter } from "next/navigation";
+import { StyleThemeContext } from "@/app/context/styleTheme";
 type Props = {
   product: Product;
 };
 
 export default function ProductCard({ product }: Props) {
+  const { theme } = useContext(StyleThemeContext);
   const router = useRouter();
   return (
     <div
-      className={styles.wrapper}
+      className={`${styles.wrapper} ${styles[theme]}`}
       onClick={() => router.push(`/product/${product.id}`)}
     >
       <Image
@@ -21,7 +24,7 @@ export default function ProductCard({ product }: Props) {
         width={200}
         height={200}
       />
-      <div className={styles.infoProduct}>
+      <div className={`${styles.infoProduct} ${styles[theme]}`}>
         <h3>{product.name}</h3>
         <p>
           {product.price.toLocaleString("es-AR", {
@@ -31,7 +34,7 @@ export default function ProductCard({ product }: Props) {
         </p>
         <div className={styles.stock}>
           <p>stock:</p>
-          <div className={styles.stockCircle}>
+          <div className={`${styles.stockCircle} ${styles[theme]}`}>
             <p>{product.amount}</p>
           </div>
         </div>

@@ -7,19 +7,18 @@
 
   .infoProduct {
     border-top: 1px solid #eceaea;
-    // border-bottom: 1px solid #eceaea;
     padding: 8px;
     h3 {
       margin: 0;
       font-size: 22px;
       font-weight: 600;
-      color: #333;
+      // color: #333;
     }
     p {
       margin: 0;
       font-size: 16px;
       font-weight: 600;
-      color: #333;
+      // color: #333;
     }
     .stock {
       display: flex;
@@ -29,10 +28,9 @@
         margin: 0;
         font-size: 14px;
         font-weight: 400;
-        color: #333;
+        // color: #333;
       }
       .stockCircle {
-        background-color: $color__primary;
         border-radius: 5px;
         padding: 0.1rem 0.3rem;
         margin-left: 8px;
@@ -40,6 +38,14 @@
           margin: 0;
           font-size: 14px;
           font-weight: 600;
+        }
+        &.light {
+          background-color: $color__primary;
+          color: $color__text;
+        }
+        &.dark {
+          background-color: $color__primary--dark;
+          color: $color__text--dark;
         }
       }
     }
@@ -50,6 +56,16 @@
     transform: scale(1.02);
     cursor: pointer;
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  &.light {
+    background-color: $color__secondary;
+    color: $color__text;
+  }
+  &.dark {
+    background-color: $color__secondary--dark;
+    color: $color__text--dark;
+    box-shadow: 0px 1px 4px 0px rgba(255, 255, 255, 0.3);
   }
 }
 

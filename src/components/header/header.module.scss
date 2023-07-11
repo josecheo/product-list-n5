@@ -1,19 +1,41 @@
+@import "../../app/utils/layout.scss";
+
 .header {
   max-width: 900px;
   width: 100%;
   margin: auto;
   height: 60px;
-  background-color: #fff;
-
 
   .header_fixed {
     max-width: 900px;
     width: 100%;
     padding: 20px;
     position: fixed;
-    background-color: #fff;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
+    justify-items: center;
+    z-index: 9999;
+    &.light {
+      background: $color__secondary;
+      color: $color__text;
+    }
+    &.dark {
+      background: $color__secondary--dark;
+      color: $color__text--dark;
+    }
+
+    h1 {
+      font-size: 18px;
+    }
   }
+
+  // &.light {
+  //   background: $color__secondary;
+  //   color: $color__text;
+  // }
+  // &.dark {
+  //   background: $color__secondary--dark;
+  //   color: $color__text--dark;
+  // }
 }

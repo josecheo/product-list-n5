@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import styles from "./addToCard.module.scss";
 import Buttton from "@/components/button";
 import { CartContext } from "@/app/context/cardContext";
+import { StyleThemeContext } from "@/app/context/styleTheme";
 
 type AddToCardProps = {
   productId: number;
@@ -12,6 +13,7 @@ type AddToCardProps = {
 export default function AddToCard({ stock, productId }: AddToCardProps) {
   const [count, setCount] = useState(1);
   const { addToCart, cartItems } = useContext(CartContext);
+  const { theme } = useContext(StyleThemeContext);
 
   const existingItem = cartItems?.find(
     (element) => element.productId === productId
@@ -46,26 +48,28 @@ export default function AddToCard({ stock, productId }: AddToCardProps) {
       <div className={styles.wrapper}>
         <button
           onClick={handleSubtract}
-          className={
+          className={`
+          ${
             isMaximun
               ? styles.disable
               : count > 1
               ? styles.active
               : styles.disable
-          }
+          } ${styles[theme]}`}
         >
           -
         </button>
         <p>{count}</p>
         <button
           onClick={handleAdd}
-          className={
+          className={`
+          ${
             isMaximun
               ? styles.disable
               : count > 0 && count < stock
               ? styles.active
               : styles.disable
-          }
+          } ${styles[theme]}`}
         >
           +
         </button>

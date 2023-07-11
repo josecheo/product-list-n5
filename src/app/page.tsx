@@ -1,6 +1,6 @@
 "use client";
-import "./styles.scss";
-import styles from "./home.module.scss";
+// import "./styles.scss";
+import styles from "./app.module.scss";
 
 import Image from "next/image";
 import productImg from "../../public/assets/productos-lacteos.png";
@@ -18,7 +18,7 @@ export default function Home() {
   };
 
   return (
-    <div className={`${styles.wrapper} ${styles[theme]}`}>
+    <div className={`${styles.home} ${styles[theme]}`}>
          <SwitchTheme />
       <br />
       <h1>Test Products N5</h1>

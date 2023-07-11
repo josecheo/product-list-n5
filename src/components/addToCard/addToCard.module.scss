@@ -1,3 +1,4 @@
+@import "../../app/utils/layout.scss";
 .wrapper {
   display: flex;
   justify-content: space-between;
@@ -6,17 +7,20 @@
   /* margin-top: 15px; */
 }
 .wrapper p {
-  color: #646966;
+  // color: #646966;
   font-size: 16px;
   font-family: Nunito;
   font-weight: 700;
+
+  &.dark {
+    color: #fff;
+  }
 }
 
 .button,
 .disable,
 .active {
   border-radius: 5px;
-  background: #fff;
   font-size: 24px;
   width: 50px;
   transition: all 0.3s ease-in-out;
@@ -24,12 +28,27 @@
     transform: scale(1.1);
   }
   cursor: pointer;
+
+  &.light {
+    background-color: $color__secondary;
+  }
+  &.dark {
+    background-color: $color__secondary--dark;
+  }
 }
 .disable {
   border: 1px solid #dadada;
   color: #dadada;
+  &.dark {
+    border: 1px solid #646966;
+    color: #646966;
+  }
 }
 .active {
   border: 1px solid #646966;
   color: #646966;
+  &.dark {
+    border: 1px solid #fff;
+    color: #fff;
+  }
 }

@@ -1,12 +1,23 @@
+@import "../utils/layout.scss";
 .wrapper {
   max-width: 900px;
   margin: 80px auto;
   padding: 1rem;
   // position: relative;
-}
-.containerProducts {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
+
+  &.light {
+    background-color: $color__secondary;
+    color: $color__text;
+  }
+  &.dark {
+    background-color: $color__secondary--dark;
+    color: $color__text--dark;
+  }
+
+  .containerProducts {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
 }

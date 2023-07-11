@@ -1,5 +1,17 @@
 @import "./utils/layout.scss";
-.wrapper {
+.app {
+  width: 100%;
+  &.light {
+    background-color: $color__secondary;
+    color: $color__text;
+  }
+  &.dark {
+    background-color: $color__secondary--dark;
+    color: $color__text--dark;
+  }
+}
+
+.home {
   display: flex;
   flex-direction: column;
   align-items: center;
