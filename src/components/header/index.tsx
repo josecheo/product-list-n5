@@ -8,12 +8,12 @@ export default function Header() {
   const pathname = usePathname();
 
   return pathname === "/" ? (
-    <React.Fragment></React.Fragment>
+    <></>
   ) : (
     <header className={styles.header}>
       <div className={styles.header_fixed}>
-      <h1>N5-{pathname}</h1>
-      <CartIcon />
+        <h1>N5-{pathname}</h1>
+        <CartIcon />
       </div>
     </header>
   );

@@ -1,6 +1,7 @@
 "use client";
+import { useContext } from "react";
 import styles from "./button.module.scss";
-
+import { StyleThemeContext } from "@/app/context/styleTheme";
 type ButtonProps = {
   title: string;
   handleClick: (event: any) => void;
@@ -14,6 +15,8 @@ export default function Button({
   disabled,
   outlined,
 }: ButtonProps) {
+  const { theme } = useContext(StyleThemeContext);
+
   const getStyleMode = () => {
     if (outlined) {
       return disabled ? styles.disabledOutlined : styles.activeOutlined;
@@ -24,7 +27,7 @@ export default function Button({
 
   return (
     <div
-      className={getStyleMode()}
+      className={`${getStyleMode()} ${styles[theme]}`}
       onClick={disabled ? async () => {} : async (event) => handleClick(event)}
     >
       <h5>{title}</h5>

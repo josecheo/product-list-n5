@@ -1,7 +1,17 @@
+@import "./utils/layout.scss";
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+
+  &.light {
+    background-color: $color__secondary;
+    color: $color__text;
+  }
+  &.dark {
+    background-color: $color__secondary--dark;
+    color: $color__text--dark;
+  }
 }

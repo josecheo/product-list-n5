@@ -1,7 +1,7 @@
-@import "../../app/utils/layout.scss";
+@import "@/app/utils/layout.scss";
 
 .circle {
-  // background: $base-color;
+  // background: $color__primary;
   width: 58px;
   height: 58px;
   border-radius: 22px;
@@ -20,7 +20,7 @@
   }
 }
 .circleBag {
-  background: $base-color;
+  background: $color__primary;
   display: flex;
   justify-content: center;
   align-items: center;
