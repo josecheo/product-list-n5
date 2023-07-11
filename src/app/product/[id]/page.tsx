@@ -7,6 +7,8 @@ import AddToCard from "@/components/addToCard";
 import Image from "next/image";
 import Button from "@/components/button";
 import { useRouter } from "next/navigation";
+import { StyleThemeContext } from "@/app/context/styleTheme";
+
 type ProductProps = {
   params: {
     id: string;
@@ -17,6 +19,7 @@ export default function Product({ params }: ProductProps) {
   const { products } = useContext(ProductContext);
   const [product, setProduct] = useState<Product>();
   const router = useRouter();
+  const { theme } = useContext(StyleThemeContext);
 
   useEffect(() => {
     if (products) {
@@ -49,7 +52,7 @@ export default function Product({ params }: ProductProps) {
             </p>
             <div className={styles.stock}>
               <p>stock:</p>
-              <div className={styles.stockCircle}>
+              <div className={`${styles.stockCircle} ${styles[theme]}`}>
                 <p>{product.amount}</p>
               </div>
             </div>
@@ -57,14 +60,12 @@ export default function Product({ params }: ProductProps) {
             <AddToCard productId={product.id} stock={product.amount} />
             <br />
             <Button
-          title={"Volver"}
-          handleClick={() => router.back()}
-          outlined
-        />
+              title={"Volver"}
+              handleClick={() => router.back()}
+              outlined
+            />
           </div>
         </div>
-
-    
       </div>
     )
   );

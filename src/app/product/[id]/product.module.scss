@@ -2,28 +2,25 @@
 .wrapper {
   max-width: 900px;
   margin: 80px auto;
-  padding: 1rem;
-  // position: relative;
+  height: calc(100vh - 150px);
 }
 
 .container {
   padding: 8px;
-
   .infoProduct {
     border-top: 1px solid #eceaea;
-    // border-bottom: 1px solid #eceaea;
     padding: 8px;
     h3 {
       margin: 0;
       font-size: 22px;
       font-weight: 600;
-      color: #333;
+      // color: #333;
     }
     p {
       margin: 0;
       font-size: 16px;
       font-weight: 600;
-      color: #333;
+      // color: #333;
     }
     .stock {
       display: flex;
@@ -33,7 +30,7 @@
         margin: 0;
         font-size: 14px;
         font-weight: 400;
-        color: #333;
+        // color: #333;
       }
       .stockCircle {
         background-color: $color__primary;
@@ -44,6 +41,14 @@
           margin: 0;
           font-size: 14px;
           font-weight: 600;
+        }
+        &.light {
+          background-color: $color__primary;
+          color: $color__text;
+        }
+        &.dark {
+          background-color: $color__primary--dark;
+          color: $color__text--dark;
         }
       }
     }

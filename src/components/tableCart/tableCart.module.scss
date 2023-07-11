@@ -25,7 +25,8 @@
       }
 
       thead {
-        background-color:$color__primary;
+        background-color: $color__primary;
+        color: #000;
       }
 
       tbody tr:nth-child(even) {

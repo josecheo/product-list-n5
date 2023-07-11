@@ -12,14 +12,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ height: "100%" }}>
       <StyleTheme>
         <ProductProvider>
           <CartProvider>
-            <body
-              className={`${inter.className}`}
-              style={{ margin: 0 }}
-            >
+            <body className={`${inter.className}`} style={{ margin: 0 }}>
               <App>{children}</App>
             </body>
           </CartProvider>
